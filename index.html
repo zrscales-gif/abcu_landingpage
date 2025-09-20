@@ -331,7 +331,7 @@
   .fan .card.f { transform: rotate(0deg);  z-index: 2; }
   .fan .card.k { transform: rotate(8deg); }
 }
-}
+
   footer .foot {
   display: grid;
   grid-template-columns: 1fr auto 1fr; /* left | center | right */
@@ -351,42 +351,7 @@ footer .foot-right {
   justify-self: end;
   text-align: right;
 }
-/* Even tighter mobile fix */
-@media (max-width: 560px) {
-  .container {
-    padding: 0 12px; /* less horizontal padding */
-  }
 
-  .hero h2 {
-    font-size: 19px;   /* smaller headline */
-    line-height: 1.15;
-    max-width: 24ch;   /* fewer characters per line */
-    margin: 0 4px 6px;
-  }
-
-  .hero p.kicker {
-    font-size: 14px;
-    line-height: 1.42;
-    max-width: 32ch;
-    margin: 0 4px 10px;
-  }
-
-  .fan-stage {
-    margin-top: -12px;
-    transform: scale(.76); /* shrink entire fan */
-    transform-origin: center top;
-  }
-
-  .fan .card {
-    height: 88px;     /* smaller card height */
-    margin-left: -16px;
-    border-radius: 10px;
-  }
-
-  .meaning-bar {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
 /* Even tighter mobile fix */
 @media (max-width: 560px) {
   .container {
