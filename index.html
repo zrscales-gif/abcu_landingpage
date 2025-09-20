@@ -254,24 +254,7 @@ footer .foot-right {
   text-align: right;
 }
 
-  /* FINAL mobile override — Why Representation Matters */
-@media (max-width: 560px){
-  .stat .row{ display:block !important; }        /* title + text first */
-  .stat .row > div:first-child{ margin-bottom:14px; }
-
-  /* photos side-by-side under the text */
-  .card-right{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    justify-items:center;
-  }
-  .card-right img{
-    width:100%;
-    max-width:180px;
-    height:auto;
-    border-radius:12px;
-  }
+ 
 /* === Mobile (≤560px) — single, final source of truth === */
 @media (max-width: 560px){
   /* Global safety */
