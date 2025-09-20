@@ -254,86 +254,44 @@ footer .foot-right {
   justify-self: end;
   text-align: right;
 }
-/* === MOBILE FAN FULL-WIDTH EDGE === */
-@media (max-width: 560px){
-  .fan-stage { 
-    margin-top: 0;
-    display: flex;
-    justify-content: center;
-    width: 100vw;            /* span the whole device width */
-    margin-left: -20px;      /* cancel out .container padding */
-  }
-  .fan { 
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%; 
-    transform: none; 
-    margin: 0 auto;
-  }
-  .fan .card { 
-    height: 140px;
-    margin-left: -28px;
-    border-radius: 14px;
-  }
-  .fan .card:first-child { margin-left: 0; }
-  .fan .card.a { transform: rotate(-7deg); }
-  .fan .card.f { transform: rotate(0deg);  z-index: 2; }
-  .fan .card.k { transform: rotate(7deg); }
 
-  /* Meaning bar also spans edge-to-edge */
-  .meaning-wrap {
+            
+/* === MOBILE FAN — centered, balanced, not huge === */
+@media (max-width: 560px){
+  .fan-stage{
+    margin-top: 0;
+    width: 100%;
+    margin-left: 0;          /* no container offset */
     display: flex;
     justify-content: center;
-    width: 100vw;
-    margin-left: -20px;  /* cancel container padding */
   }
-  .meaning-bar {
+  .fan{
     width: 100%;
-    max-width: none;     /* let it stretch */
+    max-width: 320px;        /* keeps the fan neat on phones */
+    margin: 0 auto;
+    transform: none;         /* no scale up */
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+  }
+  .fan .card{
+    height: 122px;           /* smaller than 140px */
+    margin-left: -22px;      /* gentle overlap */
+    border-radius: 12px;
+  }
+  .fan .card:first-child{ margin-left: 0; }
+  .fan .card.a{ transform: rotate(-6deg); }
+  .fan .card.f{ transform: rotate(0deg); z-index: 2; }
+  .fan .card.k{ transform: rotate(6deg); }
+
+  /* Meaning bar matches fan width */
+  .meaning-wrap{ justify-content: center; }
+  .meaning-bar{
+    width: 100%;
+    max-width: 320px;        /* match the fan */
     margin: 8px auto 0;
   }
 }
-            
-/* === MOBILE FAN CENTER + BALANCE === */
-@media (max-width: 560px){
-  .fan-stage { 
-    margin-top: 0;              /* cleaner alignment with text */
-    display: flex; 
-    justify-content: center; 
-    width: 100%;
-  }
-  .fan { 
-    display: flex;
-    justify-content: center; 
-    align-items: flex-end;
-    margin: 0 auto; 
-    transform: none;            /* no shrinking */
-    width: 100%;                /* take full width */
-    max-width: 360px;           /* keeps it neat, not overflowing */
-  }
-  .fan .card { 
-    height: 140px;              /* keep cards fairly big */
-    margin-left: -28px;         /* even overlap across all cards */
-    border-radius: 14px; 
-  }
-  .fan .card:first-child { margin-left: 0; } /* no shift on first card */
-  .fan .card.a { transform: rotate(-7deg); }
-  .fan .card.f { transform: rotate(0deg);  z-index: 2; }
-  .fan .card.k { transform: rotate(7deg); }
-}
-/* === MOBILE FAN + MEANING BAR ALIGN === */
-@media (max-width: 560px){
-  .meaning-wrap {
-    display: flex;
-    justify-content: center;
-  }
-  .meaning-bar {
-    width: 100%;
-    max-width: 360px;   /* matches the fan’s max-width */
-    margin: 8px auto 0; /* small top gap, centered */
-  }
-
 }</style>
 </head>
 <body>
