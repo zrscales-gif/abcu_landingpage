@@ -75,7 +75,17 @@
       "portrait heading"
       "portrait bio";
     gap:24px;
+    .creator .heading h3 {
+    margin-bottom: 4px;  /* pull the gap tighter */
   }
+
+  .creator .bio {
+    margin-top: 0;       /* removes the extra spacing */
+  }
+
+  .creator .bio p:first-child {
+    margin-top: 0;       /* make sure first paragraph hugs the heading */
+    }
   .creator .heading{ grid-area: heading; }
   .creator .portrait{ grid-area: portrait; }
   .creator .bio{ grid-area: bio; }
