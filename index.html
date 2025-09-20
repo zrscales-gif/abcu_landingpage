@@ -351,7 +351,19 @@ footer .foot-right {
   .fan .card.f { transform: rotate(0deg);  z-index: 2; }
   .fan .card.k { transform: rotate(7deg); }
 }
-            }</style>
+/* === MOBILE FAN + MEANING BAR ALIGN === */
+@media (max-width: 560px){
+  .meaning-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .meaning-bar {
+    width: 100%;
+    max-width: 360px;   /* matches the fan’s max-width */
+    margin: 8px auto 0; /* small top gap, centered */
+  }
+
+}</style>
 </head>
 <body>
   <!-- GOLD BRAND BAR -->
