@@ -326,10 +326,19 @@
   @media (max-width: 900px){
     .fan .card{height:150px;margin-left:-46px; border-radius:12px;}
   }
-  @media (max-width:560px){
-    .fan{ transform:scale(.92); }
-    .fan .card{ height:120px; margin-left:-28px; }
+  @media (max-width: 560px) {
+  .fan-stage {
+    margin-top: -14px;
+    transform: scale(.82);   /* slightly bigger fan */
+    transform-origin: center top;
   }
+
+  .fan .card {
+    height: 100px;           /* bigger cards */
+    margin-left: -18px;      /* keep them aligned */
+    border-radius: 12px;
+  }
+}
   footer .foot {
   display: grid;
   grid-template-columns: 1fr auto 1fr; /* left | center | right */
