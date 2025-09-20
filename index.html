@@ -323,6 +323,34 @@ footer .foot-right {
 /* meaning bar still fits the screen */
 .meaning-wrap{ justify-content: center; }
 .meaning-bar{ max-width: 92vw; 
+            
+/* === MOBILE FAN CENTER + BALANCE === */
+@media (max-width: 560px){
+  .fan-stage { 
+    margin-top: 0;              /* cleaner alignment with text */
+    display: flex; 
+    justify-content: center; 
+    width: 100%;
+  }
+  .fan { 
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end;
+    margin: 0 auto; 
+    transform: none;            /* no shrinking */
+    width: 100%;                /* take full width */
+    max-width: 360px;           /* keeps it neat, not overflowing */
+  }
+  .fan .card { 
+    height: 140px;              /* keep cards fairly big */
+    margin-left: -28px;         /* even overlap across all cards */
+    border-radius: 14px; 
+  }
+  .fan .card:first-child { margin-left: 0; } /* no shift on first card */
+  .fan .card.a { transform: rotate(-7deg); }
+  .fan .card.f { transform: rotate(0deg);  z-index: 2; }
+  .fan .card.k { transform: rotate(7deg); }
+}
             }</style>
 </head>
 <body>
