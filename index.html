@@ -103,42 +103,7 @@
     max-width: 100%;
     margin: 0 6px 12px;
   }
-/* Even tighter mobile fix */
-@media (max-width: 560px) {
-  .container {
-    padding: 0 12px; /* less horizontal padding */
-  }
 
-  .hero h2 {
-    font-size: 19px;   /* smaller headline */
-    line-height: 1.15;
-    max-width: 24ch;   /* fewer characters per line */
-    margin: 0 4px 6px;
-  }
-
-  .hero p.kicker {
-    font-size: 14px;
-    line-height: 1.42;
-    max-width: 32ch;
-    margin: 0 4px 10px;
-  }
-
-  .fan-stage {
-    margin-top: -12px;
-    transform: scale(.76); /* shrink entire fan */
-    transform-origin: center top;
-  }
-
-  .fan .card {
-    height: 88px;     /* smaller card height */
-    margin-left: -16px;
-    border-radius: 10px;
-  }
-
-  .meaning-bar {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
   /* Fan stage / cards — bigger, centered */
   .fan-stage {
     margin-top: -8px;
@@ -334,31 +299,6 @@
   @media (max-width: 900px){
     .fan .card{height:150px;margin-left:-46px; border-radius:12px;}
   }
-  @media (max-width: 560px) {
-  .fan-stage {
-    margin-top: -8px;
-    display: flex;
-    justify-content: center;
-    transform: scale(1.05);       /* make the whole fan bigger */
-    transform-origin: center bottom;
-  }
-
-  .fan {
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .fan .card {
-    height: 150px;                /* bigger cards (was 100–120px) */
-    margin-left: -30px;           /* overlap but keep spread */
-    border-radius: 14px;
-  }
-
-  .fan .card.a { transform: rotate(-8deg); }
-  .fan .card.f { transform: rotate(0deg);  z-index: 2; }
-  .fan .card.k { transform: rotate(8deg); }
-}
 
   footer .foot {
   display: grid;
@@ -380,8 +320,25 @@ footer .foot-right {
   text-align: right;
 }
 
-  
-</style>
+  /* FINAL mobile override — Why Representation Matters */
+@media (max-width: 560px){
+  .stat .row{ display:block !important; }        /* title + text first */
+  .stat .row > div:first-child{ margin-bottom:14px; }
+
+  /* photos side-by-side under the text */
+  .card-right{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    justify-items:center;
+  }
+  .card-right img{
+    width:100%;
+    max-width:180px;
+    height:auto;
+    border-radius:12px;
+  }
+}</style>
 </head>
 <body>
   <!-- GOLD BRAND BAR -->
