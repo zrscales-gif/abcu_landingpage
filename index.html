@@ -254,37 +254,34 @@ footer .foot-right {
   justify-self: end;
   text-align: right;
 }
-
- 
-/* === Mobile (≤560px) — final source of truth === */
+ /* === Mobile (≤560px) — final override === */
 @media (max-width: 560px){
-  /* Safety / layout */
-  body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
-  .container { padding: 0 14px; }
-
-  /* Hero text */
-  .hero { grid-template-columns: 1fr; gap: 16px; padding: 14px 0 18px; }
-  .hero h2 { font-size: 24px; line-height: 1.25; max-width: 26ch; margin: 0 6px 8px; text-wrap: balance; }
-  .hero .kicker { font-size: 16px; line-height: 1.5; max-width: 36ch; margin: 0 6px 12px; }
-
-  /* Fan — smaller + pushed down a bit */
-  .fan-stage { margin-top: 12px; display: flex; justify-content: center; }
-  .fan { justify-content: center; transform: scale(1.00); transform-origin: center bottom; width: 100%; margin: 0 auto; }
-  .fan .card { height: 130px; margin-left: -20px; border-radius: 14px; }
-  .fan .card.a { transform: rotate(-8deg); }
+  /* Fan — smaller so it doesn’t push down too far */
+  .fan-stage { 
+    margin-top: 4px; 
+    display: flex; 
+    justify-content: center; 
+  }
+  .fan { 
+    justify-content: center; 
+    transform: scale(0.92);    /* shrink fan instead of enlarging */
+    transform-origin: center bottom; 
+    width: 100%; 
+    margin: 0 auto; 
+  }
+  .fan .card { 
+    height: 115px;   /* smaller cards (was 145–155px) */
+    margin-left: -18px;   /* slight overlap */
+    border-radius: 12px; 
+  }
+  .fan .card.a { transform: rotate(-7deg); }
   .fan .card.f { transform: rotate(0deg); z-index: 2; }
-  .fan .card.k { transform: rotate(8deg); }
+  .fan .card.k { transform: rotate(7deg); }
 
-  /* Meaning bar */
+  /* Meaning bar fits screen */
   .meaning-wrap { justify-content: center; }
   .meaning-bar  { max-width: 92vw; }
-
-  /* Why Representation Matters — text first, photos under it */
-  .stat .row { display: block !important; }
-  .stat .row > div:first-child { margin-bottom: 14px; }
-  .card-right { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; justify-items: center; }
-  .card-right img { width: 100%; max-width: 180px; height: auto; border-radius: 12px; }
-}</style>
+}  }</style>
 </head>
 <body>
   <!-- GOLD BRAND BAR -->
