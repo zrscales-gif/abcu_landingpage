@@ -328,16 +328,29 @@
   }
   @media (max-width: 560px) {
   .fan-stage {
-    margin-top: -10px;
-    transform: scale(.95);   /* slightly bigger fan */
-    transform-origin: center top;
+    margin-top: -8px;
+    display: flex;
+    justify-content: center;
+    transform: scale(1.05);       /* make the whole fan bigger */
+    transform-origin: center bottom;
+  }
+
+  .fan {
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .fan .card {
-    height: 140px;           /* bigger cards */
-    margin-left: -22px;      /* keep them aligned */
+    height: 150px;                /* bigger cards (was 100–120px) */
+    margin-left: -30px;           /* overlap but keep spread */
     border-radius: 14px;
   }
+
+  .fan .card.a { transform: rotate(-8deg); }
+  .fan .card.f { transform: rotate(0deg);  z-index: 2; }
+  .fan .card.k { transform: rotate(8deg); }
+}
 }
   footer .foot {
   display: grid;
