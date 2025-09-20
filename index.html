@@ -65,7 +65,8 @@
   }
   @media (max-width:720px){
     .fan .card{height:135px; margin-left:-56px}
-    .fan-stage{margin-top:-68px}
+    .fan-stage{margin-top:-68px
+              }
   
   /* Desktop layout */
 @media (min-width: 900px){
@@ -255,9 +256,9 @@ footer .foot-right {
 }
 
  
-/* === Mobile (≤560px) — single, final source of truth === */
+/* === Mobile (≤560px) — final source of truth === */
 @media (max-width: 560px){
-  /* Global safety */
+  /* Safety / layout */
   body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
   .container { padding: 0 14px; }
 
@@ -266,10 +267,10 @@ footer .foot-right {
   .hero h2 { font-size: 24px; line-height: 1.25; max-width: 26ch; margin: 0 6px 8px; text-wrap: balance; }
   .hero .kicker { font-size: 16px; line-height: 1.5; max-width: 36ch; margin: 0 6px 12px; }
 
-  /* Fan — slightly smaller + lower so it doesn’t crowd text */
-  .fan-stage { margin-top: 6px; display: flex; justify-content: center; }
-  .fan { justify-content: center; transform: scale(1.10); transform-origin: center bottom; width: 100%; margin: 0 auto; }
-  .fan .card { height: 145px; margin-left: -24px; border-radius: 14px; }
+  /* Fan — smaller + pushed down a bit */
+  .fan-stage { margin-top: 12px; display: flex; justify-content: center; }
+  .fan { justify-content: center; transform: scale(1.00); transform-origin: center bottom; width: 100%; margin: 0 auto; }
+  .fan .card { height: 130px; margin-left: -20px; border-radius: 14px; }
   .fan .card.a { transform: rotate(-8deg); }
   .fan .card.f { transform: rotate(0deg); z-index: 2; }
   .fan .card.k { transform: rotate(8deg); }
@@ -278,7 +279,7 @@ footer .foot-right {
   .meaning-wrap { justify-content: center; }
   .meaning-bar  { max-width: 92vw; }
 
-  /* Why Representation Matters — title + text first, photos under it */
+  /* Why Representation Matters — text first, photos under it */
   .stat .row { display: block !important; }
   .stat .row > div:first-child { margin-bottom: 14px; }
   .card-right { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; justify-items: center; }
