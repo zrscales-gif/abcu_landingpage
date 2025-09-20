@@ -57,8 +57,111 @@
   line-height:1.55;
   color:#333;
 }
+/* ======= Tablet ======= */
+  @media (max-width:1100px){
+    .hero{grid-template-columns: 1fr}
+    .fan .card{height:150px; margin-left:-60px}
+    .fan-stage{margin-top:-80px}
+  }
+  @media (max-width:720px){
+    .fan .card{height:135px; margin-left:-56px}
+    .fan-stage{margin-top:-68px}
+  }
 
-/* Desktop layout */
+  /* ======= Mobile ≤560px ======= */
+  @media (max-width: 560px){
+
+    .topbar { justify-content: center; padding: 16px 0 6px; }
+    .topbar img { height: 70px; max-width: none; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
+
+    .hero-wrap { padding: 10px 0 18px; }
+    .hero { grid-template-columns:1fr; gap:18px; }
+
+    .hero .copy { padding-right: 6px; margin-bottom: 0; }
+    .hero h2{
+      font-size: 21px;
+      line-height: 1.18;
+      max-width: 26ch;
+      overflow-wrap: anywhere;
+      hyphens: auto;
+      margin: 0 6px 6px;
+      text-wrap: balance;
+    }
+    .hero p{
+      font-size: 15px;
+      line-height: 1.48;
+      max-width: 36ch;
+      overflow-wrap: anywhere;
+      margin: 0 6px 8px;
+    }
+
+    /* Smaller, centered fan — all cards fit */
+    .fan-stage{ margin-top:-18px; display:flex; justify-content:center; }
+    .fan{
+      justify-content:center;
+      transform: scale(.83) translateX(-2%);
+      transform-origin: center bottom;
+      width: 92%;
+      margin: 0 auto;
+    }
+    .fan .card{
+      height: 100px;
+      margin-left: -20px;
+      border-radius: 12px;
+    }
+    .fan .card.a{ transform: rotate(-6deg); }
+    .fan .card.f{ transform: rotate(0deg);  z-index: 2; }
+    .fan .card.k{ transform: rotate(6deg); }
+
+    .stat .row{ display:flex; flex-direction:column; gap:14px; }
+    .card-right{
+      order:2;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:6px;
+      justify-items:center;
+      width:100%;
+      margin-top:2px;
+    }
+    .card-right img{ width:44vw; max-width:185px; height:auto; border-radius:12px; }
+
+    .meaning .cols{ grid-template-columns: repeat(3,1fr) !important; gap:8px; }
+    .meaning .chip{ padding:8px; }
+    .meaning .chip img{ max-width:72px; margin:0 auto 6px; display:block; }
+    .meaning .chip b{ font-size:.9rem; }
+    .meaning .chip div{ font-size:.8rem; }
+
+    .grid4{ grid-template-columns: 1fr !important; gap:12px; }
+    .feature{ padding:14px; border-radius:12px; }
+
+    .creator .cols{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      text-align:left;
+    }
+    .creator .heading{ order:1; }
+    .creator .portrait{
+      order:2;
+      width:100%;
+      min-height:0;
+      height:auto;          /* let height follow the image */
+      border-radius:14px;
+      overflow:visible;
+      background:#fff;
+      padding:0;
+      display:block;
+    }
+    .creator .portrait img{
+      width:100%;
+      height:auto;          /* keeps natural aspect ratio */
+      object-fit:contain;   /* show the full image inside the outlined space */
+      border-radius:14px;
+      display:block;
+    }
+    .creator .bio{ order:3; }
+  }
+  /* Desktop layout */
 @media (min-width: 900px){
   .creator .cols{
     grid-template-columns: 0.9fr 1.1fr;   /* photo left, text right */
