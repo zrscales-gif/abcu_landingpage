@@ -349,7 +349,65 @@ footer .foot-right {
   justify-self: end;
   text-align: right;
 }
-</style>
+  /* --- MOBILE FIXES FOR HERO + FAN --- */
+body { overflow-x: hidden; } /* stop any sideways scroll */
+
+@media (max-width: 600px) {
+  .hero { 
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 0 18px;
+  }
+
+  .hero .copy { margin: 0; }
+
+  .hero h2{
+    /* smaller, shorter line-length */
+    font-size: clamp(20px, 6vw, 28px);
+    line-height: 1.14;
+    max-width: 24ch;
+    margin: 0 0 8px;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .kicker{
+    font-size: 15px;
+    line-height: 1.48;
+    max-width: 36ch;
+    margin: 0 0 10px;
+  }
+
+  /* keep cards fully in-frame */
+  .fan-stage{ 
+    margin-top: -10px; 
+    display: flex; 
+    justify-content: center; 
+    width: 100%;
+  }
+  .fan{
+    justify-content: center;
+    transform: scale(.78);          /* shrink the whole fan */
+    transform-origin: center bottom;
+    width: 100%;
+  }
+  .fan .card{
+    height: 100px;                  /* smaller card height */
+    margin-left: -24px;
+    border-radius: 12px;
+  }
+
+  /* make the meaning bar fit the screen */
+  .meaning-wrap{ justify-content: center; }
+  .meaning-bar{ max-width: 92vw; }
+}
+
+@media (max-width: 380px){
+  .hero h2{ font-size: 18px; max-width: 22ch; }
+  .fan{ transform: scale(.70); }
+  .fan .card{ height: 96px; margin-left: -20px; }
+  .meaning-bar{ max-width: 94vw; }
+}</style>
 </head>
 <body>
   <!-- GOLD BRAND BAR -->
