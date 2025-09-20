@@ -258,25 +258,25 @@ footer .foot-right {
 @media (max-width: 560px){
   /* Fan — smaller so it doesn’t push down too far */
   .fan-stage { 
-    margin-top: 4px; 
+    margin-top: -8px; 
     display: flex; 
     justify-content: center; 
   }
   .fan { 
     justify-content: center; 
-    transform: scale(0.92);    /* shrink fan instead of enlarging */
+    transform: scale(1.2);    /* shrink fan instead of enlarging */
     transform-origin: center bottom; 
     width: 100%; 
     margin: 0 auto; 
   }
   .fan .card { 
-    height: 115px;   /* smaller cards (was 145–155px) */
-    margin-left: -18px;   /* slight overlap */
-    border-radius: 12px; 
+    height: 165px;   /* smaller cards (was 145–155px) */
+    margin-left: -34px;   /* slight overlap */
+    border-radius: 14px; 
   }
-  .fan .card.a { transform: rotate(-7deg); }
+  .fan .card.a { transform: rotate(-9deg); }
   .fan .card.f { transform: rotate(0deg); z-index: 2; }
-  .fan .card.k { transform: rotate(7deg); }
+  .fan .card.k { transform: rotate(9deg); }
 
   /* Meaning bar fits screen */
   .meaning-wrap { justify-content: center; }
