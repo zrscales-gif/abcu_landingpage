@@ -362,6 +362,21 @@ footer .foot-right {
   .creator .bio p{ margin:0 0 10px; }        /* compact paragraphs */
 }
   }
+/* === MOBILE: tighten Creator photo + text spacing (≤560px) === */
+@media (max-width:560px){
+  .creator{ padding:18px 0; }            /* less top/bottom space */
+  .creator .cols{ gap:8px; }             /* smaller gaps between pieces */
+  .creator .heading h3{ margin:0 0 6px; }
+
+  .creator .portrait{ margin-top:0; }
+  .creator .portrait img{
+    margin:8px auto 0 !important;        /* override the 50px top margin */
+    max-width:100%;
+  }
+
+  .creator .bio{ margin-top:0; }
+  .creator .bio p{ margin:8px 0; }       /* tighter paragraphs */
+}  
 </style>
 </head>
 <body>
