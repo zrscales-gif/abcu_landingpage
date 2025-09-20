@@ -56,7 +56,21 @@
   font-size:1rem;
   line-height:1.55;
   color:#333;
-}
+  
+  @media (max-width:560px){
+  .creator{
+    padding:20px 0;          /* was 40px top/bottom */
+  }
+  .creator .cols{
+    gap:10px;                /* tighter gap between heading, image, and text */
+  }
+  .creator .portrait{
+    margin-top:0;            /* remove extra top margin */
+  }
+  .creator .bio{
+    margin-top:0;            /* pull text up under the image */
+  }
+}}
 /* ======= Tablet ======= */
  @media (max-width:1100px){
   .hero{grid-template-columns: 1fr}
