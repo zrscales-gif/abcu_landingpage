@@ -118,7 +118,30 @@
   /* Safety: avoid horizontal scroll on small iPhones */
   body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
 }
-  /* Desktop layout */
+  /* --- Mobile layout for "Why Representation Matters" --- */
+@media (max-width: 560px){
+  /* Stack title + text first, then photos underneath */
+  .stat .row{ 
+    display: block;           /* stop the 2-col grid */
+  }
+  .stat .row > div:first-child{
+    margin-bottom: 14px;      /* space above the photos */
+  }
+
+  /* Photos: two columns, centered */
+  .card-right{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    justify-items: center;
+  }
+  .card-right img{
+    width: 100%;
+    max-width: 180px;         /* tweak as you like (160–200px) */
+    height: auto;
+    border-radius: 12px;
+  }
+}  /* Desktop layout */
 @media (min-width: 900px){
   .creator .cols{
     grid-template-columns: 0.9fr 1.1fr;   /* photo left, text right */
