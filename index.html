@@ -254,40 +254,44 @@ footer .foot-right {
   justify-self: end;
   text-align: right;
 }
-/* === MOBILE FAN + MEANING BAR EDGE TO EDGE === */
+/* === MOBILE FAN FULL-WIDTH EDGE === */
 @media (max-width: 560px){
-  .fan-stage {
-    margin-top: -8px;
+  .fan-stage { 
+    margin-top: 0;
     display: flex;
     justify-content: center;
-    width: 100vw;             /* full screen width */
-    margin-left: -20px;       /* kill container padding */
+    width: 100vw;            /* span the whole device width */
+    margin-left: -20px;      /* cancel out .container padding */
   }
-  .fan {
-    width: 100%;
+  .fan { 
+    display: flex;
     justify-content: center;
-    transform: scale(1);      /* keep natural size */
-    transform-origin: center bottom;
+    align-items: flex-end;
+    width: 100%; 
+    transform: none; 
+    margin: 0 auto;
   }
-  .fan .card {
+  .fan .card { 
     height: 140px;
-    margin-left: -28px;       /* overlap adjusted for edge-to-edge */
+    margin-left: -28px;
     border-radius: 14px;
   }
+  .fan .card:first-child { margin-left: 0; }
+  .fan .card.a { transform: rotate(-7deg); }
+  .fan .card.f { transform: rotate(0deg);  z-index: 2; }
+  .fan .card.k { transform: rotate(7deg); }
 
+  /* Meaning bar also spans edge-to-edge */
   .meaning-wrap {
     display: flex;
     justify-content: center;
-    width: 100vw;             /* match fan full width */
-    margin-left: -20px;       /* kill container padding */
+    width: 100vw;
+    margin-left: -20px;  /* cancel container padding */
   }
   .meaning-bar {
     width: 100%;
-    max-width: none;          /* allow full width */
-    margin: 10px 0;
-    border-radius: 0;         /* optional: square edges for edge-to-edge look */
-    border-left: none;
-    border-right: none;
+    max-width: none;     /* let it stretch */
+    margin: 8px auto 0;
   }
 }
             
