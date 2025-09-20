@@ -407,6 +407,43 @@ body { overflow-x: hidden; } /* stop any sideways scroll */
   .fan{ transform: scale(.70); }
   .fan .card{ height: 96px; margin-left: -20px; }
   .meaning-bar{ max-width: 94vw; }
+}
+/* Even tighter mobile fix */
+@media (max-width: 560px) {
+  .container {
+    padding: 0 12px; /* less horizontal padding */
+  }
+
+  .hero h2 {
+    font-size: 19px;   /* smaller headline */
+    line-height: 1.15;
+    max-width: 24ch;   /* fewer characters per line */
+    margin: 0 4px 6px;
+  }
+
+  .hero p.kicker {
+    font-size: 14px;
+    line-height: 1.42;
+    max-width: 32ch;
+    margin: 0 4px 10px;
+  }
+
+  .fan-stage {
+    margin-top: -12px;
+    transform: scale(.76); /* shrink entire fan */
+    transform-origin: center top;
+  }
+
+  .fan .card {
+    height: 88px;     /* smaller card height */
+    margin-left: -16px;
+    border-radius: 10px;
+  }
+
+  .meaning-bar {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
 }</style>
 </head>
 <body>
