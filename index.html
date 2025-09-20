@@ -68,8 +68,11 @@
     .fan-stage{margin-top:-68px}
   }
 
-  /* ======= Mobile (≤560px) — single source of truth ======= */
+ /* === Mobile (≤560px) — single source of truth === */
 @media (max-width: 560px) {
+  /* Safety: prevent sideways scroll */
+  body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+
   /* Layout paddings */
   .container { padding: 0 14px; }
 
@@ -104,7 +107,7 @@
   }
   .fan .card {
     height: 155px;               /* bigger cards */
-    margin-left: -28px;          /* small overlap to keep width tight */
+    margin-left: -28px;          /* small overlap */
     border-radius: 14px;
   }
   .fan .card.a { transform: rotate(-8deg); }
@@ -115,32 +118,24 @@
   .meaning-wrap { justify-content: center; }
   .meaning-bar  { max-width: 92vw; }
 
-  /* Safety: avoid horizontal scroll on small iPhones */
-  body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
-}
   /* --- Mobile layout for "Why Representation Matters" --- */
-@media (max-width: 560px){
-  /* Stack title + text first, then photos underneath */
-  .stat .row{ 
-    display: block;           /* stop the 2-col grid */
+  .stat .row { display: block; }
+  .stat .row > div:first-child {
+    margin-bottom: 14px;
   }
-  .stat .row > div:first-child{
-    margin-bottom: 14px;      /* space above the photos */
-  }
-
-  /* Photos: two columns, centered */
-  .card-right{
+  .card-right {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     justify-items: center;
   }
-  .card-right img{
+  .card-right img {
     width: 100%;
-    max-width: 180px;         /* tweak as you like (160–200px) */
+    max-width: 180px;
     height: auto;
     border-radius: 12px;
   }
+}
 }  /* Desktop layout */
 @media (min-width: 900px){
   .creator .cols{
