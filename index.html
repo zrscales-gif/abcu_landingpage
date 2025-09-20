@@ -297,7 +297,33 @@ footer .foot-right {
     height:auto;
     border-radius:12px;
   }
- }</style>
+ /* Fan — smaller on mobile */
+.fan-stage{
+  margin-top: -6px;
+  display: flex;
+  justify-content: center;
+}
+.fan{
+  justify-content: center;
+  /* smaller overall fan */
+  transform: scale(.68);
+  transform-origin: center bottom;
+  width: 92%;
+  margin: 0 auto;
+}
+.fan .card{
+  height: 92px;          /* smaller cards */
+  margin-left: -14px;    /* slight overlap */
+  border-radius: 10px;
+}
+.fan .card.a{ transform: rotate(-6deg); }
+.fan .card.f{ transform: rotate(0deg);  z-index: 2; }
+.fan .card.k{ transform: rotate(6deg); }
+
+/* meaning bar still fits the screen */
+.meaning-wrap{ justify-content: center; }
+.meaning-bar{ max-width: 92vw; 
+            }</style>
 </head>
 <body>
   <!-- GOLD BRAND BAR -->
