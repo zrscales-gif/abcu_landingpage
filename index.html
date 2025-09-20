@@ -67,8 +67,20 @@
     .fan .card{height:135px; margin-left:-56px}
     .fan-stage{margin-top:-68px}
   }
-
- /* === Mobile (≤560px) — single source of truth === */
+}  /* Desktop layout */
+@media (min-width: 900px){
+  .creator .cols{
+    grid-template-columns: 0.9fr 1.1fr;   /* photo left, text right */
+    grid-template-areas:
+      "portrait heading"
+      "portrait bio";
+    gap:24px;
+  }
+  .creator .heading{ grid-area: heading; }
+  .creator .portrait{ grid-area: portrait; }
+  .creator .bio{ grid-area: bio; }
+}
+   /* === Mobile (≤560px) — single source of truth === */
 @media (max-width: 560px) {
   /* Safety: prevent sideways scroll */
   body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
@@ -135,21 +147,7 @@
     height: auto;
     border-radius: 12px;
   }
-}
-}  /* Desktop layout */
-@media (min-width: 900px){
-  .creator .cols{
-    grid-template-columns: 0.9fr 1.1fr;   /* photo left, text right */
-    grid-template-areas:
-      "portrait heading"
-      "portrait bio";
-    gap:24px;
-  }
-  .creator .heading{ grid-area: heading; }
-  .creator .portrait{ grid-area: portrait; }
-  .creator .bio{ grid-area: bio; }
-}
-</style>
+}</style>
 <style>
   :root{
     --hbcu-gold:#F5C26B;
