@@ -70,36 +70,34 @@
 /* Desktop creator layout — left-align photo, center vertically */
 @media (min-width:900px){
   .creator .cols{
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns:0.9fr 1.1fr;
     grid-template-areas:
       "portrait heading"
       "portrait bio";
-    gap: 24px;
-    align-items: center;           /* vertical centering of both columns */
+    gap:24px;
+    align-items:center;   /* ✅ this vertically centers the photo with the text block */
   }
 
   .creator .heading h3{ margin-bottom:6px; }
   .creator .bio{ margin-top:0; }
 
-  /* Frame on the container (keeps border tidy) */
   .creator .portrait{
-    grid-area: portrait;
-    justify-self: start;           /* ⬅️ keep against the left edge */
-    display: block !important;     /* override any previous flex */
-    max-width: 560px;              /* adjust to taste */
-    border: 3px solid #e5e5e5;
-    border-radius: 16px;
-    padding: 8px;                  /* space between border & image */
-    background: #fff;
-    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    display:flex;
+    justify-content:center;   /* ✅ keeps photo centered horizontally */
+    align-items:center;       /* ✅ ensures vertical centering within the grid cell */
   }
 
   .creator .portrait img{
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    border-radius: 12px;           /* inner rounding to match frame */
+    border:none;              /* no border */
+    border-radius:12px;       /* subtle rounded corners */
+    padding:0;
+    background:none;
+    box-shadow:none;
+    display:block;
+    width:100%;
+    max-width:500px;
+    height:auto;
+    margin:0;
   }
 }</style>
 <style>
