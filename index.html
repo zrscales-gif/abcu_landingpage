@@ -58,20 +58,19 @@
   color:#333;
 }
 /* ======= Tablet ======= */
-  @media (max-width:1100px){
-    .hero{grid-template-columns: 1fr}
-    .fan .card{height:150px; margin-left:-60px}
-    .fan-stage{margin-top:-80px}
-  }
+ @media (max-width:1100px){
+  .hero{grid-template-columns: 1fr}
+  .fan .card{height:150px; margin-left:-60px}
+  .fan-stage{margin-top:-80px}
+}
 @media (max-width:720px){
   .fan .card{height:135px; margin-left:-56px}
   .fan-stage{margin-top:-68px}
-}  /* <-- add this brace */
-  
-  /* Desktop layout */
+}
+/* Desktop layout */
 @media (min-width: 900px){
   .creator .cols{
-    grid-template-columns: 0.9fr 1.1fr;   /* photo left, text right */
+    grid-template-columns: 0.9fr 1.1fr;
     grid-template-areas:
       "portrait heading"
       "portrait bio";
@@ -80,8 +79,6 @@
   .creator .heading{ grid-area: heading; }
   .creator .portrait{ grid-area: portrait; }
   .creator .bio{ grid-area: bio; }
-}
-  
 }</style>
 <style>
   :root{
@@ -256,42 +253,44 @@ footer .foot-right {
 }
 
             
-/* === MOBILE FAN — centered, balanced, not huge === */
-@media (max-width: 560px){
+/* === Mobile fan (≤560px) — centered & balanced === */
+@media (max-width:560px){
+  /* tighten hero a touch */
+  .hero{ grid-template-columns:1fr; gap:16px; padding:14px 0 18px; }
+
+  /* fan */
   .fan-stage{
-    margin-top: 0;
-    width: 100%;
-    margin-left: 0;          /* no container offset */
-    display: flex;
-    justify-content: center;
+    margin-top:6px;
+    display:flex;
+    justify-content:center;
+    width:100%;
   }
   .fan{
-    width: 100%;
-    max-width: 320px;        /* keeps the fan neat on phones */
-    margin: 0 auto;
-    transform: none;         /* no scale up */
-    align-items: flex-end;
-    display: flex;
-    justify-content: center;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    width:100%;
+    max-width:340px;   /* balanced size on phones */
+    margin:0 auto;
+    transform:none;    /* don’t enlarge */
   }
   .fan .card{
-    height: 122px;           /* smaller than 140px */
-    margin-left: -22px;      /* gentle overlap */
-    border-radius: 12px;
+    height:120px;      /* big but not overwhelming */
+    margin-left:-22px; /* even overlap */
+    border-radius:12px;
   }
-  .fan .card:first-child{ margin-left: 0; }
-  .fan .card.a{ transform: rotate(-6deg); }
-  .fan .card.f{ transform: rotate(0deg); z-index: 2; }
-  .fan .card.k{ transform: rotate(6deg); }
+  .fan .card:first-child{ margin-left:0; }
+  .fan .card.a{ transform:rotate(-6deg); }
+  .fan .card.f{ transform:rotate(0deg); z-index:2; }
+  .fan .card.k{ transform:rotate(6deg); }
 
-  /* Meaning bar matches fan width */
-  .meaning-wrap{ justify-content: center; }
+  /* meaning bar matches fan width */
+  .meaning-wrap{ justify-content:center; }
   .meaning-bar{
-    width: 100%;
-    max-width: 320px;        /* match the fan */
-    margin: 8px auto 0;
-  }
-}
+    width:100%;
+    max-width:340px;
+    margin:8px auto 0;
+  
 }</style>
 </head>
 <body>
