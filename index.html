@@ -291,7 +291,62 @@ footer .foot-right {
     max-width:340px;
     margin:8px auto 0;
   
-}</style>
+}
+/* === MOBILE: Fan smaller + centered, and clean Why Representation section === */
+@media (max-width:560px){
+  /* Fan */
+  .fan-stage{
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .fan{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transform: scale(.82);            /* dial this up/down to taste */
+    transform-origin: center bottom;
+    margin: 0 auto;
+    max-width: 340px;                  /* keeps spread under control */
+  }
+  .fan .card{
+    height: 118px;                     /* smaller cards */
+    margin-left: -20px;                /* gentler overlap so it’s not too wide */
+    border-radius: 12px;
+  }
+  .fan .card:first-child{ margin-left: 0; }
+  .fan .card.a{ transform: rotate(-6deg); }
+  .fan .card.f{ transform: rotate(0deg); z-index: 2; }
+  .fan .card.k{ transform: rotate(6deg); }
+
+  /* Meaning bar under the fan, same width */
+  .meaning-wrap{ justify-content: center; }
+  .meaning-bar{
+    width: 100%;
+    max-width: 340px;
+    margin: 10px auto 0;
+  }
+
+  /* Why Representation Matters — balanced on mobile */
+  .stat{ padding: 24px 0 28px; }
+  .stat .row{ display: block; }
+  .stat .big{ margin: 0 0 8px; }
+  .stat .row > div:first-child{ margin-bottom: 14px; }
+
+  .card-right{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+  }
+  .card-right img{
+    width: 44vw;                /* responsive but not huge */
+    max-width: 180px;
+    height: auto;
+    border-radius: 12px;
+  }
+</style>
 </head>
 <body>
   <!-- GOLD BRAND BAR -->
