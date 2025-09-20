@@ -63,10 +63,10 @@
     .fan .card{height:150px; margin-left:-60px}
     .fan-stage{margin-top:-80px}
   }
- @media (max-width:720px){
-    .fan .card{height:135px; margin-left:-56px}
-    .fan-stage{margin-top:-68px
-              }
+@media (max-width:720px){
+  .fan .card{height:135px; margin-left:-56px}
+  .fan-stage{margin-top:-68px}
+}  /* <-- add this brace */
   
   /* Desktop layout */
 @media (min-width: 900px){
@@ -254,34 +254,50 @@ footer .foot-right {
   justify-self: end;
   text-align: right;
 }
- /* === Mobile (≤560px) — final override === */
-@media (max-width: 560px){
-  /* Fan — smaller so it doesn’t push down too far */
-  .fan-stage { 
-    margin-top: -8px; 
-    display: flex; 
-    justify-content: center; 
+/* === Mobile (≤560px) — final override === */
+@media (max-width:560px){
+  /* Fan: smaller */
+  .fan-stage{
+    margin-top:-6px;
+    display:flex;
+    justify-content:center;
   }
-  .fan { 
-    justify-content: center; 
-    transform: scale(1.2);    /* shrink fan instead of enlarging */
-    transform-origin: center bottom; 
-    width: 100%; 
-    margin: 0 auto; 
+  .fan{
+    justify-content:center;
+    transform: scale(.78);          /* shrink the whole fan */
+    transform-origin:center top;
+    width:100%;
+    margin:0 auto;
   }
-  .fan .card { 
-    height: 165px;   /* smaller cards (was 145–155px) */
-    margin-left: -34px;   /* slight overlap */
-    border-radius: 14px; 
+  .fan .card{
+    height:110px;                   /* smaller cards */
+    margin-left:-18px;              /* modest overlap */
+    border-radius:12px;
   }
-  .fan .card.a { transform: rotate(-9deg); }
-  .fan .card.f { transform: rotate(0deg); z-index: 2; }
-  .fan .card.k { transform: rotate(9deg); }
+  .fan .card.a{ transform: rotate(-6deg); }
+  .fan .card.f{ transform: rotate(0deg);  z-index:2; }
+  .fan .card.k{ transform: rotate(6deg); }
 
   /* Meaning bar fits screen */
-  .meaning-wrap { justify-content: center; }
-  .meaning-bar  { max-width: 92vw; }
-}  }</style>
+  .meaning-wrap{ justify-content:center; }
+  .meaning-bar{ max-width:92vw; }
+
+  /* “Why Representation Matters” stacks */
+  .stat .row{ display:block !important; }
+  .stat .row > div:first-child{ margin-bottom:14px; }
+  .card-right{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    justify-items:center;
+  }
+  .card-right img{
+    width:100%;
+    max-width:160px;                /* keep them tidy */
+    height:auto;
+    border-radius:12px;
+  }
+ }</style>
 </head>
 <body>
   <!-- GOLD BRAND BAR -->
