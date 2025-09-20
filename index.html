@@ -377,6 +377,37 @@ footer .foot-right {
   .creator .bio{ margin-top:0; }
   .creator .bio p{ margin:8px 0; }       /* tighter paragraphs */
 }  
+/* ===== Desktop Creator Styling ===== */
+@media (min-width: 900px){
+  .creator .cols{
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-areas:
+      "portrait heading"
+      "portrait bio";
+    gap: 18px; /* was 24px, tightened */
+  }
+
+  /* tighten spacing under heading */
+  .creator .heading h3 {
+    margin-bottom: 6px; /* closer to the text */
+  }
+
+  /* give portrait a clean framed border */
+  .creator .portrait {
+    border: 3px solid #e5e5e5;   /* light neutral border */
+    border-radius: 16px;          /* match card style */
+    padding: 8px;                 /* space inside border */
+    background: #fff;             /* white backdrop inside */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* soft lift */
+  }
+
+  .creator .portrait img {
+    border-radius: 12px; /* round inside corners */
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
 </style>
 </head>
 <body>
