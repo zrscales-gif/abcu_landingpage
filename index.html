@@ -68,99 +68,56 @@
     .fan-stage{margin-top:-68px}
   }
 
-  /* ======= Mobile ≤560px ======= */
-  @media (max-width: 560px){
+  /* ======= Mobile (≤560px) — single source of truth ======= */
+@media (max-width: 560px) {
+  /* Layout paddings */
+  .container { padding: 0 14px; }
 
-    .topbar { justify-content: center; padding: 16px 0 6px; }
-    .topbar img { height: 70px; max-width: none; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
-
-    .hero-wrap { padding: 10px 0 18px; }
-    .hero { grid-template-columns:1fr; gap:18px; }
-
-    .hero .copy { padding-right: 6px; margin-bottom: 0; }
-    .hero h2{
-      font-size: 21px;
-      line-height: 1.18;
-      max-width: 26ch;
-      overflow-wrap: anywhere;
-      hyphens: auto;
-      margin: 0 6px 6px;
-      text-wrap: balance;
-    }
-    .hero p{
-      font-size: 15px;
-      line-height: 1.48;
-      max-width: 36ch;
-      overflow-wrap: anywhere;
-      margin: 0 6px 8px;
-    }
-
-    /* Smaller, centered fan — all cards fit */
-    .fan-stage{ margin-top:-18px; display:flex; justify-content:center; }
-    .fan{
-      justify-content:center;
-      transform: scale(.83) translateX(-2%);
-      transform-origin: center bottom;
-      width: 92%;
-      margin: 0 auto;
-    }
-    .fan .card{
-      height: 100px;
-      margin-left: -20px;
-      border-radius: 12px;
-    }
-    .fan .card.a{ transform: rotate(-6deg); }
-    .fan .card.f{ transform: rotate(0deg);  z-index: 2; }
-    .fan .card.k{ transform: rotate(6deg); }
-
-    .stat .row{ display:flex; flex-direction:column; gap:14px; }
-    .card-right{
-      order:2;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:6px;
-      justify-items:center;
-      width:100%;
-      margin-top:2px;
-    }
-    .card-right img{ width:44vw; max-width:185px; height:auto; border-radius:12px; }
-
-    .meaning .cols{ grid-template-columns: repeat(3,1fr) !important; gap:8px; }
-    .meaning .chip{ padding:8px; }
-    .meaning .chip img{ max-width:72px; margin:0 auto 6px; display:block; }
-    .meaning .chip b{ font-size:.9rem; }
-    .meaning .chip div{ font-size:.8rem; }
-
-    .grid4{ grid-template-columns: 1fr !important; gap:12px; }
-    .feature{ padding:14px; border-radius:12px; }
-
-    .creator .cols{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      text-align:left;
-    }
-    .creator .heading{ order:1; }
-    .creator .portrait{
-      order:2;
-      width:100%;
-      min-height:0;
-      height:auto;          /* let height follow the image */
-      border-radius:14px;
-      overflow:visible;
-      background:#fff;
-      padding:0;
-      display:block;
-    }
-    .creator .portrait img{
-      width:100%;
-      height:auto;          /* keeps natural aspect ratio */
-      object-fit:contain;   /* show the full image inside the outlined space */
-      border-radius:14px;
-      display:block;
-    }
-    .creator .bio{ order:3; }
+  /* Hero text */
+  .hero { grid-template-columns: 1fr; gap: 16px; padding: 14px 0 18px; }
+  .hero h2 {
+    font-size: 24px;
+    line-height: 1.25;
+    max-width: 100%;
+    margin: 0 6px 8px;
+    text-wrap: balance;
   }
+  .hero .kicker {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 100%;
+    margin: 0 6px 12px;
+  }
+
+  /* Fan stage / cards — bigger, centered */
+  .fan-stage {
+    margin-top: -8px;
+    display: flex;
+    justify-content: center;
+  }
+  .fan {
+    justify-content: center;
+    transform: scale(1.18);      /* make the whole fan larger */
+    transform-origin: center bottom;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .fan .card {
+    height: 155px;               /* bigger cards */
+    margin-left: -28px;          /* small overlap to keep width tight */
+    border-radius: 14px;
+  }
+  .fan .card.a { transform: rotate(-8deg); }
+  .fan .card.f { transform: rotate(0deg);  z-index: 2; }
+  .fan .card.k { transform: rotate(8deg); }
+
+  /* Meaning bar fits screen width */
+  .meaning-wrap { justify-content: center; }
+  .meaning-bar  { max-width: 92vw; }
+
+  /* Safety: avoid horizontal scroll on small iPhones */
+  body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+}
   /* Desktop layout */
 @media (min-width: 900px){
   .creator .cols{
@@ -371,65 +328,42 @@ footer .foot-right {
   justify-self: end;
   text-align: right;
 }
-  /* --- MOBILE FIXES FOR HERO + FAN --- */
-body { overflow-x: hidden; } /* stop any sideways scroll */
-
-@media (max-width: 600px) {
-  .hero { 
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 14px 0 18px;
+/* Even tighter mobile fix */
+@media (max-width: 560px) {
+  .container {
+    padding: 0 12px; /* less horizontal padding */
   }
 
-  .hero .copy { margin: 0; }
-
-  .hero h2{
-    /* smaller, shorter line-length */
-    font-size: clamp(20px, 6vw, 28px);
-    line-height: 1.14;
-    max-width: 24ch;
-    margin: 0 0 8px;
-    overflow-wrap: anywhere;
-    text-wrap: balance;
+  .hero h2 {
+    font-size: 19px;   /* smaller headline */
+    line-height: 1.15;
+    max-width: 24ch;   /* fewer characters per line */
+    margin: 0 4px 6px;
   }
 
-  .kicker{
-    font-size: 15px;
-    line-height: 1.48;
-    max-width: 36ch;
-    margin: 0 0 10px;
+  .hero p.kicker {
+    font-size: 14px;
+    line-height: 1.42;
+    max-width: 32ch;
+    margin: 0 4px 10px;
   }
 
-  /* keep cards fully in-frame */
-  .fan-stage{ 
-    margin-top: -10px; 
-    display: flex; 
-    justify-content: center; 
-    width: 100%;
-  }
-  .fan{
-    justify-content: center;
-    transform: scale(.78);          /* shrink the whole fan */
-    transform-origin: center bottom;
-    width: 100%;
-  }
-  .fan .card{
-    height: 100px;                  /* smaller card height */
-    margin-left: -24px;
-    border-radius: 12px;
+  .fan-stage {
+    margin-top: -12px;
+    transform: scale(.76); /* shrink entire fan */
+    transform-origin: center top;
   }
 
-  /* make the meaning bar fit the screen */
-  .meaning-wrap{ justify-content: center; }
-  .meaning-bar{ max-width: 92vw; }
-}
+  .fan .card {
+    height: 88px;     /* smaller card height */
+    margin-left: -16px;
+    border-radius: 10px;
+  }
 
-@media (max-width: 380px){
-  .hero h2{ font-size: 18px; max-width: 22ch; }
-  .fan{ transform: scale(.70); }
-  .fan .card{ height: 96px; margin-left: -20px; }
-  .meaning-bar{ max-width: 94vw; }
-}
+  .meaning-bar {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
 /* Even tighter mobile fix */
 @media (max-width: 560px) {
   .container {
@@ -495,8 +429,11 @@ body { overflow-x: hidden; } /* stop any sideways scroll */
             <span class="pop pop-identity">identity</span>.
           </h2>
           <p class="kicker">
-            ABC University introduces little learners to letters, ASL hand signs, and culturally rich images that reflect who they are with 26 alphabet flash cards. </p>
-            Each letter is paired with a word that carries cultural meaning — opening the door for conversations that go beyond ABCs.          </p>
+  ABC University introduces little learners to letters, ASL hand signs, and culturally rich images that reflect who they are with 26 alphabet flash cards.
+</p>
+<p class="kicker">
+  Each letter is paired with a word that carries cultural meaning — opening the door for conversations that go beyond ABCs.
+</p>
         </div>
 
         <!-- RIGHT: Fan + hover/tap meaning -->
